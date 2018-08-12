@@ -1,0 +1,14 @@
+<label class="filter-btn" [attr.for]="buttonConfig.elementId">
+  <input type="radio" #radioBtn [id]="buttonConfig.elementId" [name]="buttonConfig.radioBtnName" [value]="buttonConfig.value"
+  (change)="onChange(buttonConfig.value)" class="filter-btn__input">
+  <!-- <input type="radio" #radioBtn [id]="radioBtnId" [value]="value" [(ngModel)]="selectedValue" (change)="onChange($event)"
+    [attr.aria-describedby]="statusLabel" class="filter-btn__input" [name]="radioBtnName"> -->
+    <div class="filter-btn__content">
+      <div class="filter-btn__content--label-text">{{buttonConfig.labelText}}</div>
+      <div class="filter-btn__content--count-container" *ngIf="buttonConfig.count !== null">
+        <span class="count-text">{{buttonConfig.count}}</span>
+        </div>
+    </div>
+</label>
+
+<!-- {{buttonConfig | json}} -->

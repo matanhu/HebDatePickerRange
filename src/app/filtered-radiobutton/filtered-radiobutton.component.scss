@@ -1,0 +1,60 @@
+
+
+.filter-btn {
+  &__input {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left: -100%;
+  }
+
+  &__content {
+    border: solid 1px #c5c5c5;
+    font-size: 1.6rem;
+    display: flex;
+    border-radius: 1.6rem;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    color: #666;
+    padding: .4rem;
+
+    position: relative;
+    transition: transform .5s;
+
+    &--label-text {
+      padding: .5rem;
+    }
+
+    &--count-container {
+      margin: 0 1rem 0 0rem;
+      background-color: #e7e7e7;
+      border-radius: 1.45rem;
+      padding: .5rem;
+
+      .count-text {
+      }
+    }
+  }
+
+  &__input:checked + &__content {
+    background-color:  #f0f6ff;
+    border: solid 1px #16254f;
+    color: #18264f;
+    font-weight: bold;
+  }
+
+  &__input:checked + &__content &__content--count-container {
+    background-color: #d6e3f7;
+  }
+
+  &__input:not(:checked) + &__content:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0, 0.15);
+  }
+
+  &__input:not(:checked) + &__content:active {
+    transform: translateY(0);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, 0.15);
+  }
+}
+
+

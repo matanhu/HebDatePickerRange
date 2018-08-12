@@ -1,0 +1,46 @@
+<!-- <div class="form-group">
+  <div class="input-group"> -->
+    <!-- <button type="button" class="input-group-append" (click)="dp.toggle()">
+      <span class="input-group-text">
+        <i class="fa fa-calendar"></i>
+      </span>
+    </button> -->
+
+    <!-- <input class="form-control input-date-picker" ngbDatepicker #dp="ngbDatepicker" [autoClose]="false" [dayTemplate]="t" (dateSelect)="onDateSelection($event)"
+      firstDayOfWeek='0' [displayMonths]="1" [dayTemplate]="t" [placement]="'bottom'"  [navigation]="'arrow'" [outsideDays]="'collapsed'"> -->
+      <!-- [markDisabled]="isDisabled" -->
+    <!-- <input class="form-control" [textMask]="{mask: mask}" type="text" [(ngModel)]="textFromDate" (blur)="onFromBlur()">
+    <input class="form-control" [textMask]="{mask: mask}" type="text" [(ngModel)]="textToDate" (blur)="onToBlur()">
+  </div>
+</div> -->
+
+ <input type="radio" [id]="buttonConfig.elementId" [name]="buttonConfig.radioBtnName" class="input-group-append" (click)="isShow = !isShow">
+   asdasdasdasdasdasd
+    <span class="input-group-text">
+      <i class="fa fa-calendar"></i>
+    </span>
+
+<div class="datepicker" [hidden]="!isShow">
+  <div class="datepicker--header">
+    <div>בחרו תאריך או טווח</div>
+    <div>תאריכים להצגת הפניות</div>
+  </div>
+  <ngb-datepicker #dp="ngbDatepicker" (select)="onDateSelection($event)"
+      firstDayOfWeek='0' [displayMonths]="1" [dayTemplate]="t" [navigation]="'arrow'" [outsideDays]="'collapsed'">
+  </ngb-datepicker>
+
+  <div class="datepicker--buttons">
+    <button class="accept">אישור</button>
+    <button class="cancel" (keydown)="onCancelKeydown($event)">ביטול</button>
+  </div>
+</div>
+
+<ng-template #t let-date="date" let-focused="focused"  let-currentMonth="currentMonth">
+  <div class="custom-day-wrapper" [class.focused]="focused" [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+    [class.faded]="isHovered(date) || isInside(date)"  (mouseenter)="hoveredDate = date"
+    (mouseleave)="hoveredDate = null" [class.day-hidden]="date.month !== currentMonth" [class.day-from]="isFrom(date)" [class.day-to]="isTo(date)">
+      <span class="custom-day" (keydown)="onKeyDown($event)">
+        {{ date.day }}
+      </span>
+  </div>
+</ng-template>

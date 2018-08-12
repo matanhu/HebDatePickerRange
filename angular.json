@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "MhDatePickerHebrew": {
+      "root": "projects/mh-date-picker-hebrew",
+      "sourceRoot": "projects/mh-date-picker-hebrew/src",
+      "projectType": "library",
+      "prefix": "mh",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mh-date-picker-hebrew/tsconfig.lib.json",
+            "project": "projects/mh-date-picker-hebrew/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/mh-date-picker-hebrew/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mh-date-picker-hebrew/src/test.ts",
+            "tsConfig": "projects/mh-date-picker-hebrew/tsconfig.spec.json",
+            "karmaConfig": "projects/mh-date-picker-hebrew/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mh-date-picker-hebrew/tsconfig.lib.json",
+              "projects/mh-date-picker-hebrew/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "MHBootstrapDatepicker"
